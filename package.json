@@ -1,6 +1,6 @@
 {
   "name": "express-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node Express MongoDB Passport Mailgun backend API Boilerplate",
   "main": "server.js",
   "directories": {
