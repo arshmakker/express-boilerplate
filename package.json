@@ -1,0 +1,46 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "description": "Node Express MongoDB Passport Mailgun backend API Boilerplate",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhagio/express-boilerplate.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Expressjs",
+    "MongoDB",
+    "Mongoose",
+    "Mailgun",
+    "Passport",
+    "node",
+    "express"
+  ],
+  "author": "Yuichi Hagio <yhagio87@gmail.com> (http://github.com/yhagio)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yhagio/express-boilerplate/issues"
+  },
+  "homepage": "https://github.com/yhagio/express-boilerplate#readme",
+  "dependencies": {
+    "babel-core": "^6.3.21",
+    "babel-preset-es2015": "^6.3.13",
+    "bcrypt": "^0.8.5",
+    "connect-mongo": "^1.0.2",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "mailgun-js": "^0.7.7",
+    "mongoose": "^4.3.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
