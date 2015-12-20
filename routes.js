@@ -1,5 +1,6 @@
 import ensureAuth from './passport/ensure-authenticated';
-import authHandler  from './handlers/auth-handlers';
+import authHandler from './handlers/auth-handlers';
+import emailHandler from './handlers/email-handlers';
 
 // Check if user is already logged-in
 function checkIfLoggedIn(req, res, next) {
@@ -10,14 +11,32 @@ function checkIfLoggedIn(req, res, next) {
 }
 
 export default function(app) {
-  /** Authentication routes
-   * Handled by Auth Handlers (handlers/auth-handlers)
-   **/
-  app.get('/register', checkIfLoggedIn, authHandler.getRegister);
-  app.post('/register', checkIfLoggedIn, authHandler.register);
-  app.get('/login', checkIfLoggedIn, authHandler.getLogin);
-  app.post('/login', checkIfLoggedIn, authHandler.login);
-  app.get('/logout', ensureAuth, authHandler.logout);
-  app.get('/forgot-password', checkIfLoggedIn, authHandler.getForgotPassword);
-  app.post('/send-new-password', checkIfLoggedIn, authHandler.sendNewPassword);
+  // Authentication routes
+  app.get('/api/register',
+    checkIfLoggedIn,
+    authHandler.getRegister);
+
+  app.post('/api/register',
+    checkIfLoggedIn,
+    authHandler.register);
+
+  app.get('/api/login',
+    checkIfLoggedIn,
+    authHandler.getLogin);
+
+  app.post('/api/login',
+    checkIfLoggedIn,
+    authHandler.login);
+
+  app.get('/api/logout',
+    ensureAuth,
+    authHandler.logout);
+
+  app.get('/api/forgot-password',
+    checkIfLoggedIn,
+    authHandler.getForgotPassword);
+
+  app.post('/api/send-new-password',
+    checkIfLoggedIn,
+    emailHandler.sendNewPassword);
 }

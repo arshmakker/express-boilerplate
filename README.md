@@ -1,13 +1,16 @@
 # Express-Boilerplate
 
-- Node.js
-- Expressjs
-- MongoDB (Mongoose)
-- Passport
-- Mailgun
+- [Node.js](https://nodejs.org/en/)
+- [Expressjs](http://expressjs.com/en/index.html)
+- [Mongoose](http://mongoosejs.com/)
+- [Passport](http://passportjs.org/)
+- [Mailgun](https://github.com/1lobby/mailgun-js)
 
+### Features
+User authentication (User Registration, Login, Logout, Forgot Password)
 
 **How to start**
+- Pre-requisite (Node.js and MongoDB)
 
 Production
 ```

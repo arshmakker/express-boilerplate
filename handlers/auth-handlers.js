@@ -125,11 +125,9 @@ auth.login = (req, res)=> {
 };
 
 // Render Forgot Password page
-// auth.getForgotPasswordPage = function(req, res){
-//   res.render('authentications/forgotpassword', {messages:
-//     {error: req.flash('error')}
-//   });
-// };
+auth.getForgotPasswordPage = (req, res)=> {
+  return res.status(200);
+};
 
 // Logout
 auth.logout = (req, res)=> {
