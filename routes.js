@@ -1,6 +1,8 @@
 import ensureAuth from './passport/ensure-authenticated';
 import authHandler from './handlers/auth-handlers';
 import emailHandler from './handlers/email-handlers';
+import express from 'express';
+let router = express.Router();
 
 // Check if user is already logged-in
 function checkIfLoggedIn(req, res, next) {
@@ -10,33 +12,32 @@ function checkIfLoggedIn(req, res, next) {
   return res.redirect('/');
 }
 
-export default function(app) {
-  // Authentication routes
-  app.get('/api/register',
-    checkIfLoggedIn,
-    authHandler.getRegister);
+router.get('/api/register',
+  checkIfLoggedIn,
+  authHandler.getRegister);
 
-  app.post('/api/register',
-    checkIfLoggedIn,
-    authHandler.register);
+router.post('/api/register',
+  checkIfLoggedIn,
+  authHandler.register);
 
-  app.get('/api/login',
-    checkIfLoggedIn,
-    authHandler.getLogin);
+router.get('/api/login',
+  checkIfLoggedIn,
+  authHandler.getLogin);
 
-  app.post('/api/login',
-    checkIfLoggedIn,
-    authHandler.login);
+router.post('/api/login',
+  checkIfLoggedIn,
+  authHandler.login);
 
-  app.get('/api/logout',
-    ensureAuth,
-    authHandler.logout);
+router.get('/api/logout',
+  ensureAuth,
+  authHandler.logout);
 
-  app.get('/api/forgot-password',
-    checkIfLoggedIn,
-    authHandler.getForgotPassword);
+router.get('/api/forgot-password',
+  checkIfLoggedIn,
+  authHandler.getForgotPassword);
 
-  app.post('/api/send-new-password',
-    checkIfLoggedIn,
-    emailHandler.sendNewPassword);
-}
+router.post('/api/send-new-password',
+  checkIfLoggedIn,
+  emailHandler.sendNewPassword);
+
+export default router;
